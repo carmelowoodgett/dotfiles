@@ -68,6 +68,11 @@ nnoremap <space>s :Unite -quick-match buffer<cr>
 nnoremap <C-k> :Unite file_rec/async<cr>
 nnoremap <space>/ :Unite grep:.<cr>
 nnoremap <leader>b :Unite buffer<cr>
+nnoremap <leader>j :call RangeJsBeautify()<cr>
+
+autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
+autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 
 " Enable mouse support
 if has("mouse")
